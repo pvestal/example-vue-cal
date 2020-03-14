@@ -19,3 +19,8 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+*.rules
+*.indexes
+.package-lock.json
+firebase.json
+firebaseAPIKey.js
