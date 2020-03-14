@@ -2,25 +2,27 @@ import Vue from 'vue'
 import App from './App.vue'
 // This import loads the firebase namespace.
 import firebase from 'firebase/app';
- 
+
 // These imports load individual services into the firebase namespace.
 import 'firebase/auth';
 import 'firebase/firestore';
+import vuetify from './plugins/vuetify';
 
 Vue.config.productionTip = true
 
 firebase.initializeApp({
-  apiKey: "",
-  authDomain: "",
-  databaseURL: "",
-  projectId: "",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
+    apiKey: "AIzaSyC2r-otbNoACcdij8XUITtABm3r4Ia5LHY",
+    authDomain: "example-vue-cal.firebaseapp.com",
+    databaseURL: "https://example-vue-cal.firebaseio.com",
+    projectId: "example-vue-cal",
+    storageBucket: "example-vue-cal.appspot.com",
+    messagingSenderId: "363936163788",
+    appId: "1:363936163788:web:fa797e0af881e855a09f69"
 });
 
 export const db = firebase.firestore();
 
 new Vue({
-  render: h => h(App),
+  vuetify,
+  render: h => h(App)
 }).$mount('#app')

@@ -1,0 +1,54 @@
+{
+    "usFedHolidays2020": [
+        {
+            "Id": 1,
+            "Date": "01/01/20",
+            "Holiday": "New Years Day"
+        },
+        {
+            "Id": 2,
+            "Date": "01/20/20",
+            "Holiday": "Birthday of Martin Luther King, Jr."
+        },
+        {
+            "Id": 3,
+            "Date": "02/17/20",
+            "Holiday": "Washingtons Birthday"
+        },
+        {
+            "Id": 4,
+            "Date": "05/25/20",
+            "Holiday": "Memorial Day"
+        },
+        {
+            "Id": 5,
+            "Date": "07/03/20",
+            "Holiday": "Independence Day"
+        },
+        {
+            "Id": 6,
+            "Date": "09/07/20",
+            "Holiday": "Labor Day"
+        },
+        {
+            "Id": 7,
+            "Date": "10/12/20",
+            "Holiday": "Columbus Day"
+        },
+        {
+            "Id": 8,
+            "Date": "11/11/20",
+            "Holiday": "Veterans Day"
+        },
+        {
+            "Id": 9,
+            "Date": "11/26/20",
+            "Holiday": "Thanksgiving Day"
+        },
+        {
+            "Id": 10,
+            "Date": "12/25/20",
+            "Holiday": "Christmas Day"
+        }
+    ]
+}
