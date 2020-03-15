@@ -35,6 +35,9 @@ import {mapGetters} from 'vuex'
 //use modal
 import EventModal from './EventModal'
 
+//format date
+// import moment from '@fullcalendar/moment'
+
 export default {
   components: {
     FullCalendar // make the <FullCalendar> tag available

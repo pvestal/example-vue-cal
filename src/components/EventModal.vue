@@ -38,9 +38,6 @@ export default {
     text: String,
     event: Object
   },
-  computed: {
-    // ...mapGetters(["events"])
-  },
   mounted() {
       this.title = this.event.title;
       this.start = this.event.start;
