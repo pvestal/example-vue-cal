@@ -8,7 +8,10 @@ import 'firebase/auth';
 import 'firebase/firestore';
 import vuetify from './plugins/vuetify';
 
-Vue.config.productionTip = true
+// This isnt needed if not worried about state management
+import store from './store/store'
+
+Vue.config.productionTip = true //set to false in production
 
 firebase.initializeApp({
     apiKey: "AIzaSyC2r-otbNoACcdij8XUITtABm3r4Ia5LHY",
@@ -24,5 +27,6 @@ export const db = firebase.firestore();
 
 new Vue({
   vuetify,
+  store,
   render: h => h(App)
 }).$mount('#app')

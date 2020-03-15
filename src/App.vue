@@ -15,8 +15,7 @@ export default {
   name: "App",
 
   components: {
-    Calendar,
-    NavBar
+    NavBar, Calendar
   },
 
   data: () => ({

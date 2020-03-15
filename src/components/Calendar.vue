@@ -1,6 +1,7 @@
 <template>
   <div class="calendar">
     <template>
+      <!-- In fullCalendar '' | "" are important differences -->
       <FullCalendar
         defaultView="timeGridWeek"
         :plugins="calendarPlugins"
@@ -26,6 +27,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction";
 // import calData from '../assets/calData'
+import {mapGetters} from 'vuex'
 
 export default {
   components: {
@@ -42,9 +44,12 @@ export default {
       calendarWeekends: false,
       calendarEvents: [
         // initial event data
-        { title: "Event Now", start: new Date() }
+        { title: "Event- ", start: new Date() }
       ]
     };
+  },
+  computed: {
+    ...mapGetters(["events"])
   },
   methods: {
     toggleWeekends() {
