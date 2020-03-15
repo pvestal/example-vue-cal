@@ -9,7 +9,7 @@ import 'firebase/firestore';
 import vuetify from './plugins/vuetify';
 
 // This isnt needed if not worried about state management
-import store from './store/store'
+import {store} from './store/store'
 
 Vue.config.productionTip = true //set to false in production
 

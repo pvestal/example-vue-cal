@@ -59,6 +59,16 @@ export default {
       let calendarApi = this.$refs.fullCalendar.getApi(); // from the ref="..."
       calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
     },
+    handleSelect(click) {
+      console.log("click ", click)
+      this.$store.commit("ADD_EVENT", {
+        title: "something",
+        start: click.start,
+        end: click.end,
+        allDay: click.allDay
+
+      })
+    },
     handleDateClick(arg) {
       if (confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
         this.calendarEvents.push({

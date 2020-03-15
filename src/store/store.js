@@ -1,17 +1,19 @@
 import Vue from 'vue'
-import vuex from 'vuex'
+import Vuex from 'vuex'
 
-Vue.use(vuex)
+Vue.use(Vuex);
 
-const store = new Vue.store({
-state: {
-    events: []
-},
-getters: {
-    events: state => state.events
-},
-mutations: {},
-actions: {}
+export const store = new Vuex.Store({
+    state: {
+        events: []
+    },
+    mutations: {
+        ADD_EVENT: (state, event) => {
+            state.events.push(event)
+        }
+    },
+    actions: {},
+    getters: {
+        events: state => state.events
+    },
 })
-
-export default store
