@@ -11,7 +11,11 @@ import vuetify from './plugins/vuetify';
 // This isnt needed if not worried about state management
 import {store} from './store/store'
 
+//Can also just install jquery or bootstrap
+import modal from 'vue-js-modal'
+
 Vue.config.productionTip = true //set to false in production
+Vue.use(modal, {dialog: true, dynamic: true})
 
 firebase.initializeApp({
     apiKey: "AIzaSyC2r-otbNoACcdij8XUITtABm3r4Ia5LHY",

@@ -1,11 +1,11 @@
 <template>
   <div class="calendar">
-    <template>
       <!-- In fullCalendar '' | "" are important differences -->
       <FullCalendar
         defaultView="timeGridWeek"
         :plugins="calendarPlugins"
-        :events="calendarEvents"
+        :events="events"
+        :selectable=true
         :header="{
           left: 'prev,next today',
           center: 'title',
@@ -15,13 +15,16 @@
         :slotDuration="'00:30:00'"
         :minTime="'09:00:00'"
         :maxTime="'17:00:00'"
-        @dateClick="handleDateClick"
+        @select="handleSelect"
+        @eventClick="handleClick"
+        
       />
-    </template>
+      <modals-container />
   </div>
 </template>
 
 <script>
+// @dateClick="handleDateClick"
 import FullCalendar from "@fullcalendar/vue";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -29,9 +32,13 @@ import interactionPlugin from "@fullcalendar/interaction";
 // import calData from '../assets/calData'
 import {mapGetters} from 'vuex'
 
+//use modal
+import EventModal from './EventModal'
+
 export default {
   components: {
     FullCalendar // make the <FullCalendar> tag available
+    
   },
   data: () => {
     return {
@@ -60,25 +67,32 @@ export default {
       calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
     },
     handleSelect(click) {
-      console.log("click ", click)
+      // console.log("click ", click)
       this.$store.commit("ADD_EVENT", {
-        title: "something",
+        id: (new Date()).getTime(),
+        title: "Event- ",
         start: click.start,
         end: click.end,
         allDay: click.allDay
 
       })
     },
-    handleDateClick(arg) {
-      if (confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
-        this.calendarEvents.push({
-          // add new event data
-          title: "New Event",
-          start: arg.date,
-          allDay: arg.allDay
-        });
-      }
-    }
+    handleClick (arg) {
+      this.$modal.show(EventModal, {
+        text: "FromComponent- ",
+        event: arg.event
+      })
+    },
+    // handleDateClick(arg) {
+    //   if (confirm("Would you like to add an event to " + arg.dateStr + " ?")) {
+    //     this.calendarEvents.push({
+    //       // add new event data
+    //       title: "New Event",
+    //       start: arg.date,
+    //       allDay: arg.allDay
+    //     });
+    //   }
+    // }
   }
 };
 </script>

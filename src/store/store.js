@@ -14,6 +14,7 @@ export const store = new Vuex.Store({
     },
     actions: {},
     getters: {
-        events: state => state.events
+        events: state => state.events,
+        // event(id): state
     },
 })
